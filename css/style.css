@@ -225,3 +225,23 @@ body {
     margin-bottom: 0px;
   }
 }
+
+/* Animação Navegação por tabs */
+.js .js-tabcontent section {
+  display: none;
+}
+.js .js-tabcontent section.ativo {
+  display: block;
+  animation: showTabs 0.3s forwards;
+}
+
+@keyframes showTabs {
+  from {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
