@@ -42,3 +42,25 @@ function clickAccordion() {
   }
 }
 clickAccordion();
+
+/* Animação Scroll Suave Link Interno */
+function scrollSuave() {
+  const menu = document.querySelectorAll('.js-scroll [href*="#"]');
+
+  if (menu.length) {
+    function handleScrollSuave(event) {
+      event.preventDefault();
+      const href = this.getAttribute('href');
+      const section = document.querySelector(href);
+      section.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+
+    menu.forEach(item => {
+      item.addEventListener('click', handleScrollSuave);
+    });
+  }
+}
+scrollSuave();
