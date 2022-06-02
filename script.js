@@ -64,3 +64,25 @@ function scrollSuave() {
   }
 }
 scrollSuave();
+
+/* Animação ao Scroll */
+function initScrollAnimar() {
+  const section = document.querySelectorAll('.js-scrollAnimacao');
+  const windowMetade = window.innerHeight * 0.6;
+  if (section.length) {
+    function scrollAnimar() {
+      section.forEach(item => {
+        const sectionTop = item.getBoundingClientRect().top;
+        const isSectionVisible = sectionTop - windowMetade < 0;
+        if (isSectionVisible) {
+          item.classList.add('ativo');
+        } else {
+          item.classList.remove('ativo');
+        }
+      });
+    }
+    scrollAnimar();
+    window.addEventListener('scroll', scrollAnimar);
+  }
+}
+initScrollAnimar();
