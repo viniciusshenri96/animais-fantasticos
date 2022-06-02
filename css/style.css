@@ -245,3 +245,31 @@ body {
     transform: translate3d(0, 0, 0);
   }
 }
+
+/* Animação accordion List */
+
+.js .js-accordion dt::after {
+  content: '⬎';
+  margin-left: 10px;
+}
+.js .js-accordion dt.ativo::after {
+  content: '⬏';
+}
+.js .js-accordion dd {
+  display: none;
+}
+.js .js-accordion dd.ativo {
+  display: block;
+  animation: showAccordion 0.5s forwards;
+}
+
+@keyframes showAccordion {
+  from {
+    opacity: 0;
+    max-height: 100px;
+  }
+  to {
+    opacity: 1;
+    max-height: auto;
+  }
+}
